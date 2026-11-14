@@ -1,0 +1,17 @@
+services:
+  -client:
+    build:
+    ports:
+      -5173:5173
+  -server:
+    build:
+    ports:
+      -3000:3000
+    environment:
+  -database:
+    image:
+    ports:
+      -5432:5432
+    volumes:
+Volumes:
+  
