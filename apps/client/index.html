@@ -1,10 +1,31 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ticketing System</title>
+    <meta name="theme-color" content="#0B1020" />
+    <title>KataTicket · Redefine access to experiences</title>
+    <meta
+      name="description"
+      content="Concerts, matches, comedy and culture across Kenya. Pay with M-Pesa and walk in with a ticket that can't be faked."
+    />
+    <!-- Start downloading the hero photo immediately, before the JS has run -->
+    <link
+      rel="preload"
+      as="image"
+      href="/photos/crowd-phones-1280.webp"
+      imagesrcset="/photos/crowd-phones-640.webp 640w, /photos/crowd-phones-1280.webp 1280w, /photos/crowd-phones-1920.webp 1920w"
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
+    <script>
+      // Apply the saved theme before React loads so the page never flashes.
+      // KataTicket is dark-first: dark unless the user has explicitly chosen light.
+      if (localStorage.getItem("kataticket-theme") === "light") {
+        document.documentElement.classList.remove("dark")
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
